@@ -185,7 +185,7 @@ const modals = () => {
   bindModal('.button-order.button-design', '.popup-design', '.popup-design .popup-close', false);
   bindModal('.button-order.button-consultation', '.popup-consultation', '.popup-consultation .popup-close');
   bindModal('.fixed-gift', '.popup-gift', '.popup-gift .popup-close');
-  showModalByTime('.popup-consultation', 5000);
+  showModalByTime('.popup-consultation', 60000);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (modals);
