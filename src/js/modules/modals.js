@@ -1,5 +1,7 @@
 const modals = () => {
-    function bindModal(triggerSelector, modalSelector, closeSelector, closeClickOverlay = true) {
+    let btnPressed;
+
+    function bindModal(triggerSelector, modalSelector, closeSelector, closeClickOverlay = true, destroy = false) {
         const trigger = document.querySelectorAll(triggerSelector);
         const modal = document.querySelector(modalSelector);
         const close = document.querySelector(closeSelector);
@@ -22,6 +24,12 @@ const modals = () => {
                 if (target) {
                     e.preventDefault();
                 };
+
+                btnPressed = true;
+
+                if (destroy) {
+                    btn.remove();
+                }
 
                 windows.forEach(item => item.classList.remove('show'));
                 
@@ -63,10 +71,21 @@ const modals = () => {
         }, time);
     }
 
+    function openByScroll(selector) {
+        window.addEventListener('scroll', () => {
+            let scrollHeight = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
+
+            if (!btnPressed && (window.pageYOffset + document.documentElement.clientHeight >= scrollHeight)) {
+                document.querySelector(selector).click();
+            };
+        })
+    };
+
     bindModal('.button-order.button-design', '.popup-design', '.popup-design .popup-close', false);
     bindModal('.button-order.button-consultation', '.popup-consultation', '.popup-consultation .popup-close');
-    bindModal('.fixed-gift', '.popup-gift', '.popup-gift .popup-close');
+    bindModal('.fixed-gift', '.popup-gift', '.popup-gift .popup-close', true, true);
     showModalByTime('.popup-consultation', 60000);
+    openByScroll('.fixed-gift');
 };
 
 export default modals;
