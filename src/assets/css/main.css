@@ -1270,6 +1270,9 @@ h4 {
 .status {
   text-align: center;
 }
+.card.card-1 {
+  position: relative;
+}
 @media (max-width: 1399px) {
   .paints {
     display: none;
