@@ -208,8 +208,12 @@ h4 {
 .main {
   background-color: #f7e7e6;
   padding-top: 3rem;
+  overflow: hidden;
   /* Making it beautiful */
-
+}
+.main-logo {
+  position: relative;
+  z-index: 1;
 }
 .main .file_upload {
   position: relative;
@@ -489,6 +493,7 @@ h4 {
   margin-left: -6rem;
 }
 .calc {
+  overflow: hidden;
   padding: 8rem 0 4rem 0;
   /* Making it beautiful */
 
@@ -976,6 +981,7 @@ h4 {
   margin-top: 1rem;
 }
 .footer {
+  overflow: hidden;
   padding: 4rem 0 3rem 0;
 }
 .footer th {
@@ -1057,18 +1063,18 @@ h4 {
 }
 .popup-close {
   position: absolute;
-  top: -5rem;
-  right: -1.5rem;
+  top: 0;
+  right: 0;
   font-size: 5rem;
   width: 5rem;
   height: 5rem;
   line-height: 5rem;
   text-align: center;
   background: transparent;
-  color: #ffffff;
+  color: #c51abb;
   border: none;
 }
-.popup-content {
+.popup-gift .popup-content {
   position: fixed;
   text-align: center;
   max-width: 35rem;
@@ -1078,6 +1084,7 @@ h4 {
   border-radius: 4px;
   transform: translateX(-50%) !important;
   padding: 4rem 6rem 5rem 6rem;
+  overflow: visible;
 }
 .popup-gift {
   z-index: 20;
@@ -1101,7 +1108,7 @@ h4 {
 .popup-gift p {
   margin-top: 2rem;
 }
-.popup-close {
+.popup-gift .popup-close {
   position: absolute;
   top: -5rem;
   right: -1.5rem;
@@ -1124,6 +1131,7 @@ h4 {
   border-radius: 4px;
   transform: translateX(-50%) !important;
   padding: 4rem 6rem 5rem 6rem;
+  overflow: hidden;
 }
 .popup-design {
   z-index: 20;
@@ -1236,15 +1244,15 @@ h4 {
 }
 .popup-close {
   position: absolute;
-  top: -5rem;
-  right: -1.5rem;
+  top: 0;
+  right: 0;
   font-size: 5rem;
   width: 5rem;
   height: 5rem;
   line-height: 5rem;
   text-align: center;
   background: transparent;
-  color: #ffffff;
+  color: #c51abb;
   border: none;
 }
 .popup-content {
@@ -1257,6 +1265,10 @@ h4 {
   border-radius: 4px;
   transform: translateX(-50%) !important;
   padding: 3rem 6rem 4rem 6rem;
+  overflow: hidden;
+}
+.status {
+  text-align: center;
 }
 @media (max-width: 1399px) {
   .paints {
