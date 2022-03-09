@@ -1273,6 +1273,13 @@ h4 {
 .card.card-1 {
   position: relative;
 }
+.grid-col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid-col .col-sm-3 {
+  width: 100%;
+}
 @media (max-width: 1399px) {
   .paints {
     display: none;
@@ -1499,6 +1506,10 @@ h4 {
     margin: 4rem auto;
     width: auto;
   }
+  .grid-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media (max-width: 767px) {
   .main-features {
@@ -1580,6 +1591,13 @@ h4 {
   }
   .footer p {
     text-align: center;
+  }
+  .grid-col {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .grid-col .col-sm-3 {
+    width: 83.33333333%;
   }
 }
 @media (max-width: 577px) {
