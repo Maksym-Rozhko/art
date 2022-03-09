@@ -7,6 +7,7 @@ import sliders from "./modules/sliders";
 import calc from "./modules/calc";
 import filterTabs from "./modules/filterTabs";
 import imagesChange from "./modules/imagesChange";
+import accordion from "./modules/accordion";
 
 window.addEventListener('DOMContentLoaded', () => {
     let loopSlidesSeconds = 3;
@@ -21,4 +22,5 @@ window.addEventListener('DOMContentLoaded', () => {
     calc('#size', '#material', '#options', '.promocode', '.calc-price');
     filterTabs();
     imagesChange('.sizes-block');
+    accordion('.accordion-heading');
 });
