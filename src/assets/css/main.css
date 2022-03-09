@@ -670,6 +670,7 @@ h4 {
   background: url('../img/gift-bg.jpg') no-repeat;
   background-size: cover;
   background-position-x: 60%;
+  position: relative;
 }
 .gift .p-heading {
   margin-top: 9rem;
