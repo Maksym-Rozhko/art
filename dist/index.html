@@ -78,7 +78,7 @@
 	<main class=main>
 		<div class=container>
 			<div class=row>
-				<div class="col-md-3 col-sm-4 col-xs-5">
+				<div class="main-logo col-md-3 col-sm-4 col-xs-5">
 					<p class=logo>Картины.art</p>
 					<p class=logo-p>Преврати фотографию в настоящую картину!</p>
 				</div>
@@ -146,7 +146,7 @@
 		<div class=container>
 			<p class=p-heading>Портрет на холсте</p>
 			<h2>Популярные стили рисунка</h2>
-			<div class=row>
+			<div class="grid-col">
 				<div class="col-sm-3 col-sm-offset-0 col-xs-10 col-xs-offset-1">
 					<div class=styles-block>
 						<img src=assets/img/styles-1.jpg alt>
@@ -172,34 +172,6 @@
 					<div class=styles-block>
 						<img src=assets/img/styles-4.jpg alt>
 						<h4>Ручкой</h4>
-						<a href="#">Подробнее</a>
-					</div>
-				</div>
-				<div class="hidden-lg hidden-md hidden-sm hidden-xs styles-2">
-					<div class=styles-block>
-						<img src=assets/img/styles-5.jpg alt>
-						<h4>Пастелью</h4>
-						<a href="#">Подробнее</a>
-					</div>
-				</div>
-				<div class="hidden-lg hidden-md hidden-sm hidden-xs styles-2">
-					<div class=styles-block>
-						<img src=assets/img/styles-6.jpg alt>
-						<h4>Поп-арт</h4>
-						<a href="#">Подробнее</a>
-					</div>
-				</div>
-				<div class="hidden-lg hidden-md hidden-sm hidden-xs styles-2">
-					<div class=styles-block>
-						<img src=assets/img/styles-7.png alt>
-						<h4>Фотомозаика</h4>
-						<a href="#">Подробнее</a>
-					</div>
-				</div>
-				<div class="hidden-lg hidden-md hidden-sm hidden-xs styles-2">
-					<div class=styles-block>
-						<img src=assets/img/styles-8.jpg alt>
-						<h4>Шарж</h4>
 						<a href="#">Подробнее</a>
 					</div>
 				</div>
@@ -232,7 +204,7 @@
 			<h2>Рассчитайте стоимость и получите скидку 30%</h2>
 			<div class=row>
 				<div class="col-md-4 col-offset-1">
-					<form class=form action=# method=POST enctype=multipart/form-data>
+					<form class="form form_calc" action=# method=POST enctype=multipart/form-data>
 						<h4>Загрузите свое фото</h4>
 						<div class=file_upload>
 							<button type=button>Загрузить фотографию</button>
@@ -240,23 +212,23 @@
 							<input type=file name=upload>
 						</div>
 						<select id=size>
-							<option >Выберите размер картины</option>
-							<option >40x50</option>
-							<option >50x70</option>
-							<option >70x70</option>
-							<option >70x100</option>
+							<option value="">Выберите размер картины</option>
+							<option value="500">40x50</option>
+							<option value="700">50x70</option>
+							<option value="900">70x70</option>
+							<option value="1500">70x100</option>
 						</select>
 						<select id=material>
-							<option >Выберите материал картины</option>
-							<option   title="Изящный, позволяет легко создавать текстуру, подходит для декоративных картин маслом.">Холст из волокна</option>
-							<option   title="Достаточно грубый и создает ощущение реальности, подходит для классических пейзажей, натюрмортов и портретов.">Льняной холст</option>
-							<option  title="Изящный, подходит для всех типов реалистичных портретов.">Холст из натурального хлопка</option>
+							<option value="">Выберите материал картины</option>
+							<option value="1" title="Изящный, позволяет легко создавать текстуру, подходит для декоративных картин маслом.">Холст из волокна</option>
+							<option value="1.2" title="Достаточно грубый и создает ощущение реальности, подходит для классических пейзажей, натюрмортов и портретов.">Льняной холст</option>
+							<option value="1.5" title="Изящный, подходит для всех типов реалистичных портретов.">Холст из натурального хлопка</option>
 						</select>
 						<select id=options>
-							<option >Дополнительные услуги</option>
-							<option >Покрытие арт-гелем</option>
-							<option >Экспресс-изготовление</option>
-							<option >Доставка готовых работ </option>
+							<option value="0">Дополнительные услуги</option>
+							<option value="1000">Покрытие арт-гелем</option>
+							<option value="2000">Экспресс-изготовление</option>
+							<option value="500">Доставка готовых работ</option>
 						</select>
 						<input type="text" class="promocode" placeholder="Введите ваш промокод">
 						<div class=calc-price>Для расчета нужно выбрать размер картины и материал картины</div>

@@ -6,6 +6,7 @@ import showMoreItems from "./modules/showMoreItems";
 import sliders from "./modules/sliders";
 import calc from "./modules/calc";
 import filterTabs from "./modules/filterTabs";
+import imagesChange from "./modules/imagesChange";
 
 window.addEventListener('DOMContentLoaded', () => {
     let loopSlidesSeconds = 3;
@@ -19,4 +20,5 @@ window.addEventListener('DOMContentLoaded', () => {
     showMoreItems('.button-styles', '#styles .grid-col');
     calc('#size', '#material', '#options', '.promocode', '.calc-price');
     filterTabs();
+    imagesChange('.sizes-block');
 });
