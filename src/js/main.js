@@ -4,6 +4,7 @@ import mask from "./modules/mask";
 import modals from "./modules/modals";
 import showMoreItems from "./modules/showMoreItems";
 import sliders from "./modules/sliders";
+import calc from "./modules/calc";
 
 window.addEventListener('DOMContentLoaded', () => {
     let loopSlidesSeconds = 3;
@@ -15,4 +16,5 @@ window.addEventListener('DOMContentLoaded', () => {
     checkTextInputs('[name="name"]');
     checkTextInputs('[name="message"]');
     showMoreItems('.button-styles', '#styles .grid-col');
+    calc('#size', '#material', '#options', '.promocode', '.calc-price');
 });

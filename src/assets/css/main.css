@@ -541,6 +541,11 @@ h4 {
   position: relative;
   z-index: -1000;
 }
+.calc-price.accent {
+  font-size: 25px;
+  line-height: 26px;
+  color: #c51abb;
+}
 .calc .button-order {
   margin-top: 6rem;
   padding-left: 8rem;
@@ -1269,6 +1274,14 @@ h4 {
 }
 .status {
   text-align: center;
+}
+.promo-message {
+  color: green;
+  font-size: 20px;
+  line-height: 22px;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 .card.card-1 {
   position: relative;
