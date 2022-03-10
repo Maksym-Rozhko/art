@@ -1824,6 +1824,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_filterTabs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/filterTabs */ "./src/js/modules/filterTabs.js");
 /* harmony import */ var _modules_imagesChange__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/imagesChange */ "./src/js/modules/imagesChange.js");
 /* harmony import */ var _modules_accordion__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/accordion */ "./src/js/modules/accordion.js");
+/* harmony import */ var _modules_burgerMenu__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/burgerMenu */ "./src/js/modules/burgerMenu.js");
+
 
 
 
@@ -1848,6 +1850,7 @@ window.addEventListener('DOMContentLoaded', () => {
   Object(_modules_filterTabs__WEBPACK_IMPORTED_MODULE_7__["default"])();
   Object(_modules_imagesChange__WEBPACK_IMPORTED_MODULE_8__["default"])('.sizes-block');
   Object(_modules_accordion__WEBPACK_IMPORTED_MODULE_9__["default"])('.accordion-heading');
+  Object(_modules_burgerMenu__WEBPACK_IMPORTED_MODULE_10__["default"])('.burger-menu', '.burger');
 });
 
 /***/ }),
@@ -1878,6 +1881,39 @@ const accordion = accordionHeadingSelector => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (accordion);
+
+/***/ }),
+
+/***/ "./src/js/modules/burgerMenu.js":
+/*!**************************************!*\
+  !*** ./src/js/modules/burgerMenu.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const burgerMenu = (menuSelector, burgerBtnSelector) => {
+  const menuElem = document.querySelector(menuSelector),
+        burgerElem = document.querySelector(burgerBtnSelector);
+  menuElem.classList.add('animated', 'slideInLeft');
+  burgerElem.addEventListener('click', () => {
+    if (window.screen.availWidth < 993) {
+      menuElem.classList.toggle('show');
+    }
+
+    ;
+  });
+  window.addEventListener('resize', () => {
+    if (window.screen.availWidth > 993) {
+      menuElem.classList.remove('show');
+    }
+
+    ;
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (burgerMenu);
 
 /***/ }),
 

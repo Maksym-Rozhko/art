@@ -8,6 +8,7 @@ import calc from "./modules/calc";
 import filterTabs from "./modules/filterTabs";
 import imagesChange from "./modules/imagesChange";
 import accordion from "./modules/accordion";
+import burgerMenu from "./modules/burgerMenu";
 
 window.addEventListener('DOMContentLoaded', () => {
     let loopSlidesSeconds = 3;
@@ -23,4 +24,5 @@ window.addEventListener('DOMContentLoaded', () => {
     filterTabs();
     imagesChange('.sizes-block');
     accordion('.accordion-heading');
+    burgerMenu('.burger-menu', '.burger');
 });
