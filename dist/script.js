@@ -1826,6 +1826,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_accordion__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/accordion */ "./src/js/modules/accordion.js");
 /* harmony import */ var _modules_burgerMenu__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/burgerMenu */ "./src/js/modules/burgerMenu.js");
 /* harmony import */ var _modules_smoothScroll__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/smoothScroll */ "./src/js/modules/smoothScroll.js");
+/* harmony import */ var _modules_dragAndDrop__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/dragAndDrop */ "./src/js/modules/dragAndDrop.js");
+
 
 
 
@@ -1854,6 +1856,7 @@ window.addEventListener('DOMContentLoaded', () => {
   Object(_modules_accordion__WEBPACK_IMPORTED_MODULE_9__["default"])('.accordion-heading');
   Object(_modules_burgerMenu__WEBPACK_IMPORTED_MODULE_10__["default"])('.burger-menu', '.burger');
   Object(_modules_smoothScroll__WEBPACK_IMPORTED_MODULE_11__["default"])('.pageup');
+  Object(_modules_dragAndDrop__WEBPACK_IMPORTED_MODULE_12__["default"])('[name="upload"]');
 });
 
 /***/ }),
@@ -1987,6 +1990,76 @@ const checkTextInputs = selector => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (checkTextInputs);
+
+/***/ }),
+
+/***/ "./src/js/modules/dragAndDrop.js":
+/*!***************************************!*\
+  !*** ./src/js/modules/dragAndDrop.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const dragAndDrop = fileInputSelectors => {
+  const fileInputs = document.querySelectorAll(fileInputSelectors);
+  ['dragenter', 'dragleave', 'dragover', 'drop'].forEach(eventName => {
+    fileInputs.forEach(input => {
+      input.addEventListener(eventName, preventDefaults, false);
+    });
+  });
+
+  function preventDefaults(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+
+  ;
+
+  function highLight(item) {
+    item.closest('.file_upload').style.border = '5px solid yellow';
+    item.closest('.file_upload').style.backgroundColor = 'rgba(0,0,0, .7';
+  }
+
+  ;
+
+  function unHighLight(item) {
+    item.closest('.file_upload').style.border = 'none';
+    item.closest('.file_upload').style.backgroundColor = 'transparent';
+  }
+
+  ;
+  ['dragenter', 'dragover'].forEach(eventName => {
+    fileInputs.forEach(input => {
+      input.addEventListener(eventName, () => highLight(input), false);
+    });
+  });
+  ['dragleave', 'drop'].forEach(eventName => {
+    fileInputs.forEach(input => {
+      input.addEventListener(eventName, () => unHighLight(input), false);
+    });
+  });
+  fileInputs.forEach(input => {
+    input.addEventListener('drop', e => {
+      input.files = e.dataTransfer.files;
+      let dots;
+      const arr = input.files[0].name.split('.');
+      arr[0].length > 6 ? dots = '...' : dots = '.';
+      const name = arr[0].substring(0, 6) + dots + arr[1];
+      input.previousElementSibling.textContent = name;
+    });
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (dragAndDrop); // drag * 
+// dragend *
+// dragenter * - object over dropArea; 
+// dragexit * 
+// dragleave * - object outside dropArea;
+// dragover * - object hovering over dropArea; 
+// dragstart * - 
+// drop * - object sent in dropArea;
 
 /***/ }),
 

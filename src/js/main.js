@@ -10,6 +10,7 @@ import imagesChange from "./modules/imagesChange";
 import accordion from "./modules/accordion";
 import burgerMenu from "./modules/burgerMenu";
 import smoothScroll from "./modules/smoothScroll";
+import dragAndDrop from "./modules/dragAndDrop";
 
 window.addEventListener('DOMContentLoaded', () => {
     let loopSlidesSeconds = 3;
@@ -27,4 +28,5 @@ window.addEventListener('DOMContentLoaded', () => {
     accordion('.accordion-heading');
     burgerMenu('.burger-menu', '.burger');
     smoothScroll('.pageup');
+    dragAndDrop('[name="upload"]');
 });
